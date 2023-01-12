@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'antd';
 import 'antd/dist/reset.css';
 
 import TopicMenu from './components/topicMenu';
 import NavBar from './components/navbar';
 import SideBar from './components/sidebar';
+import { HomePage } from './pages/home';
 
 function App() {
   const topics = [{ title: 'Foodo Table', link: '/' }];
@@ -24,6 +26,9 @@ function App() {
       <NavBar menu={Menu} />
       <Layout>
         <SideBar menu={Menu} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
       </Layout>
     </>
   );
