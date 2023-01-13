@@ -1,0 +1,9 @@
+.back-button {
+  background-color: #753ffd;
+  color: white;
+  margin: 0 0 20px 2px;
+}
+
+.back-button:hover {
+  background-color: white;
+}
