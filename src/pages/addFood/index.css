@@ -1,0 +1,40 @@
+.add-food-container {
+  display: flex;
+  flex-direction: column;
+  margin: 74px 0 0;
+}
+
+.form {
+  padding: 20px 50px;
+  color: white;
+  background: rgb(119, 74, 246);
+  background: linear-gradient(357deg, rgba(119, 74, 246, 1) 0%, rgba(75, 86, 210, 1) 88%);
+  border-radius: 20px;
+}
+
+label {
+  color: white !important;
+}
+
+.rating {
+  background-color: gainsboro !important;
+  border-radius: 10px;
+}
+
+.error-message {
+  background-color: rgb(236, 112, 112);
+  padding: 10px;
+}
+
+.form > p {
+  margin: 20px 0;
+}
+
+.submit-button {
+  background-color: white;
+  color: black;
+}
+
+.ant-upload-list-item {
+  background: white;
+}

@@ -7,6 +7,7 @@ import TopicMenu from './components/topicMenu';
 import NavBar from './components/navbar';
 import SideBar from './components/sidebar';
 import { HomePage } from './pages/home';
+import AddFood from './pages/addFood';
 
 function App() {
   const topics = [{ title: 'Foodo Table', link: '/' }];
@@ -28,6 +29,7 @@ function App() {
         <SideBar menu={Menu} />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/add-food" element={<AddFood />} />
         </Routes>
       </Layout>
     </>
