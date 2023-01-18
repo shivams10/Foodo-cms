@@ -1,0 +1,39 @@
+.login-form {
+  margin: 70px auto;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 180px;
+}
+
+.login-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  padding: 39px;
+  border-radius: 20px 0 0 20px;
+}
+
+.login-page-image {
+  width: 300px;
+}
+
+.login-page-image > img {
+  width: 100%;
+  border-radius: 0 20px 20px 0;
+}
+
+.login-wrapper {
+  display: flex;
+}
+
+@media screen and (max-width: 750px) {
+  .login-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
