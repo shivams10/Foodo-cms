@@ -6,7 +6,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './index.css';
 import { useAuthContext } from '../../context/AuthContext';
 import { setToken } from '../../helpers';
-import { API } from '../../constants';
+import { LOCAL_API_URL } from '../../constants';
 import Logo from '../../assets/login-banner.avif';
 
 const { Title } = Typography;
@@ -25,7 +25,7 @@ const Login = () => {
         identifier: values.email,
         password: values.password
       };
-      const response = await fetch(`${API}/auth/local`, {
+      const response = await fetch(`${LOCAL_API_URL}/auth/local`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
