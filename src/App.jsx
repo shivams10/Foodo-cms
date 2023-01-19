@@ -9,6 +9,7 @@ import SideBar from './components/sidebar';
 import { HomePage } from './pages/home';
 import AddFood from './pages/addFood';
 import Login from "./pages/login"
+import ProtectedRoute from './components/protectedRoute';
 
 function App() {
   const topics = [{ title: 'Foodo Table', link: '/' }];
@@ -29,8 +30,8 @@ function App() {
       <Layout>
         <SideBar menu={Menu} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/add-food" element={<AddFood />} />
+        <Route path="/" element={<ProtectedRoute Component={HomePage} />} />
+        <Route path="/add-food" element={<ProtectedRoute Component={AddFood} />} />
           <Route path="/sign-in" element={<Login />} />
         </Routes>
       </Layout>
