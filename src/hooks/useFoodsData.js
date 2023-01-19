@@ -12,7 +12,6 @@ export const useFoodsData = () => {
 };
 
 const addFood = (data) => {
-  console.log({ data });
   return axios.post(`http://localhost:1337/api/foods`, data, {
     headers: {
       'Content-Type': 'multipart/form-data',

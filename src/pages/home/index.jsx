@@ -5,7 +5,6 @@ import Header from '../../components/header';
 
 export const HomePage = () => {
   const { isLoading, data, isError, error } = useFoodsData();
-
   const Columns = [
     { title: 'Id', dataIndex: 'id', key: 'id', width: 50 },
     {
