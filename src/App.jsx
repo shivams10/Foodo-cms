@@ -14,7 +14,6 @@ import ProtectedRoute from './components/protectedRoute';
 function App() {
   const topics = [{ title: 'Foodo Table', link: '/' }];
   const [selectedKey, setSelectedKey] = useState('0');
-
   const changeSelectedKey = (event) => {
     const key = event.key;
     setSelectedKey(key);

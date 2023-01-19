@@ -6,7 +6,6 @@ import { AUTH_TOKEN } from '../../constants';
 
 const ProtectedRoute = (props) => {
   const navigate = useNavigate();
-  
   const { user } = useAuthContext();
   const { Component } = props;
 
