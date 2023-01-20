@@ -9,6 +9,7 @@ import SideBar from './components/sidebar';
 import { HomePage } from './pages/home';
 import Recipe from './pages/recipe';
 import AddFood from './pages/addFood';
+import AddRecipe from './pages/addRecipe';
 import Login from './pages/login';
 import ProtectedRoute from './components/protectedRoute';
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<ProtectedRoute Component={HomePage} />} />
           <Route path="/add-food" element={<ProtectedRoute Component={AddFood} />} />
           <Route path="recipe" element={<ProtectedRoute Component={Recipe} />} />
+          <Route path="/add-recipe" element={<ProtectedRoute Component={AddRecipe} />} />
           <Route path="/sign-in" element={<Login />} />
         </Routes>
       </Layout>
