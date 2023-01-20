@@ -1,13 +1,19 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
 import './index.css';
 
 const BackButton = () => {
+  const navigate = useNavigate();
   return (
-    <Link to="/">
-      <Button className="back-button">Go Back</Button>
-    </Link>
+    <Button
+      className="back-button"
+      type="link"
+      icon={<ArrowLeftOutlined />}
+      onClick={() => navigate(-1)}>
+      Go Back
+    </Button>
   );
 };
 
