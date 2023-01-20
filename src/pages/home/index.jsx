@@ -59,7 +59,7 @@ export const HomePage = () => {
 
   return (
     <div style={{ marginTop: '70px' }}>
-      <Header />
+      <Header value="Food List" link="/add-food" />
       <Table
         dataSource={tableData}
         columns={Columns}
