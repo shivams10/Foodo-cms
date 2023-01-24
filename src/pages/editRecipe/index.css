@@ -1,0 +1,5 @@
+.edit-recipe-conatiner{
+    display: flex;
+    flex-direction: column;
+    margin: 74px 0 0;
+  }
