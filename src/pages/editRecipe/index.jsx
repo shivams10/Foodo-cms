@@ -8,7 +8,7 @@ import axios from 'axios';
 import './index.css';
 import BackButton from '../../components/backButton';
 import RecipeForm from '../../components/recipeForm';
-import { LOCAL_API_URL } from '../../constants';
+import { BASE_IMAGE_URL, LOCAL_API_URL } from '../../constants';
 import { getToken } from '../../helpers';
 
 const authToken = getToken();
@@ -45,7 +45,7 @@ const EditRecipe = () => {
           id,
           attributes: { name, url }
         } = image.data;
-        return [{ id, name, url: `http://localhost:1337${url}` }];
+        return [{ id, name, url: `${BASE_IMAGE_URL}${url}` }];
       }
       return null;
     })();
