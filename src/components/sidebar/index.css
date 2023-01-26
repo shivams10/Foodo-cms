@@ -1,0 +1,24 @@
+.sidebar {
+  height: 1000px;
+  margin-right: 24px;
+}
+
+.ant-btn-primary {
+  background: #6851da !important;
+  border: 1px solid white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.ant-menu-light {
+  background: #6851da !important;
+  color: white;
+}
+
+.ant-layout-sider-children {
+  margin-top: 62px !important;
+}
+
+.ant-layout-content {
+  margin-top: 70px;
+}
