@@ -12,7 +12,7 @@ const normFile = (e) => {
   return e?.fileList;
 };
 
-const RecipeForm = ({ onFinish, fields=[], loading = false, resetOnSubmit = true,heading }) => {
+const RecipeForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true, heading }) => {
   const [form] = Form.useForm();
 
   function handleFinish(value) {
@@ -22,7 +22,7 @@ const RecipeForm = ({ onFinish, fields=[], loading = false, resetOnSubmit = true
 
   return (
     <Card className="form" loading={loading}>
-      <h1 style={{marginBottom:"10px"}}>{heading}</h1>
+      <h1 style={{ marginBottom: '10px' }}>{heading}</h1>
       <Form layout="vertical" onFinish={handleFinish} form={form} initialValues={fields}>
         <Form.Item
           className="recipe-input-group"
@@ -30,7 +30,8 @@ const RecipeForm = ({ onFinish, fields=[], loading = false, resetOnSubmit = true
           name="name"
           placeholder="Food name"
           required
-          rules={[{ required: true, message: 'Please input game name', type: 'string' }]}>
+          rules={[{ required: true, message: 'Please input game name', type: 'string' }]}
+        >
           <Input name="name" />
         </Form.Item>
         <Form.Item label="Image" name="image" valuePropName="fileList" getValueFromEvent={normFile}>
@@ -43,7 +44,8 @@ const RecipeForm = ({ onFinish, fields=[], loading = false, resetOnSubmit = true
           name="steps"
           placeholder="Food name"
           className="recipe-input-group"
-          rules={[{ required: true, message: 'Please input game name', type: 'string' }]}>            
+          rules={[{ required: true, message: 'Please input game name', type: 'string' }]}
+        >
           <TextArea rows={4} />
         </Form.Item>
         <Row justify="end">

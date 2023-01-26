@@ -51,73 +51,73 @@ const Login = () => {
   };
 
   return (
-   <div className="login-form">
-    {error ? (
-      <Alert
-        className="alert_error"
-        message={error}
-        type="error"
-        closable
-        afterClose={() => setError('')}
-      />
-    ) : null}
-    <div className="login-wrapper">
-      <Form
-        name="normal_login"
-        initialValues={{
-          remember: true
-        }}
-        onFinish={onFinish}
-        autoComplete="off"
-      >
-        <div className="login-container">
-          <Space>
-            <Title level={2}>Welcome Back!</Title>
-          </Space>
-          <Form.Item
-            name="email"
-            rules={[
-              {
-                required: true,
-                type: 'email',
-                message: 'Please input your Email!'
-              }
-            ]}
-          >
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Email"
-            />
-          </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your Password!'
-              }
-            ]}
-          >
-            <Input.Password
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Item>
+    <div className="login-form">
+      {error ? (
+        <Alert
+          className="alert_error"
+          message={error}
+          type="error"
+          closable
+          afterClose={() => setError('')}
+        />
+      ) : null}
+      <div className="login-wrapper">
+        <Form
+          name="normal_login"
+          initialValues={{
+            remember: true
+          }}
+          onFinish={onFinish}
+          autoComplete="off"
+        >
+          <div className="login-container">
+            <Space>
+              <Title level={2}>Welcome Back!</Title>
+            </Space>
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  type: 'email',
+                  message: 'Please input your Email!'
+                }
+              ]}
+            >
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="Email"
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Password!'
+                }
+              ]}
+            >
+              <Input.Password
+                prefix={<LockOutlined className="site-form-item-icon" />}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
-            </Button>
-          </Form.Item>
-          {isLoading && <Title level={5}>Loading</Title> }
+            <Form.Item>
+              <Button type="primary" htmlType="submit" className="login-form-button">
+                Log in
+              </Button>
+            </Form.Item>
+            {isLoading && <Title level={5}>Loading</Title>}
+          </div>
+        </Form>
+        <div className="login-page-image">
+          <img src={Logo} />
         </div>
-      </Form>
-      <div className="login-page-image">
-        <img src={Logo} />
       </div>
     </div>
-  </div>
   );
 };
 

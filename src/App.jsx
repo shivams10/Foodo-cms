@@ -59,7 +59,6 @@ function App() {
     }
   }, [redirect, token]);
 
-
   return (
     <>
       <NavBar menu={Menu} LogIn={LogIn} />

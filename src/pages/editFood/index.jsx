@@ -74,7 +74,7 @@ const EditFood = () => {
   });
 
   function handleFinish(value) {
-    const { name,category,price,rating, description, image } = value;
+    const { name, category, price, rating, description, image } = value;
     const data = {
       name,
       price,

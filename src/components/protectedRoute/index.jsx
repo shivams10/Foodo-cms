@@ -15,7 +15,7 @@ const ProtectedRoute = (props) => {
       navigate('/sign-in');
     }
   }, []);
-  return (user && <Component />);
+  return user && <Component />;
 };
 
 export default ProtectedRoute;

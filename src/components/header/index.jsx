@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { Button, Col, Row } from 'antd';
 
-const Header = ({value, link}) => {
+const Header = ({ value, link }) => {
   return (
     <Row>
       <Col span={8}>
