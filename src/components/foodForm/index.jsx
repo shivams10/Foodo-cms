@@ -48,11 +48,23 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
                   options={[
                     {
                       value: "biryani",
-                      label: 'Biryani',
+                      label: 'Biryani'
                     },
                     {
-                      value: "chickem",
-                      label: 'Chicken',
+                      value: "chicken",
+                      label: 'Chicken'
+                    },
+                    {
+                      value: "vegetable",
+                      label: 'Vegetable'
+                    },
+                    {
+                      value: "chinese",
+                      label: 'Chinese'
+                    },
+                    {
+                      value: "paneer",
+                      label: 'Paneer'
                     }
                   ]}
                 />
