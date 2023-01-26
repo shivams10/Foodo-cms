@@ -30,7 +30,8 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
                 name="name"
                 labelCol={{ span: 24 }}
                 required
-                rules={[{ required: true, message: 'Please input food name', type: 'string' }]}>
+                rules={[{ required: true, message: 'Please input food name', type: 'string' }]}
+              >
                 <Input type="text" placeholder="Food name" />
               </Form.Item>
               <Form.Item
@@ -38,7 +39,8 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
                 name="category"
                 required
                 labelCol={{ span: 24 }}
-                rules={[{ required: true, message: 'Please add category' }]}>
+                rules={[{ required: true, message: 'Please add category' }]}
+              >
                 <Select
                   placeholder="Add Category"
                   allowClear
@@ -47,12 +49,24 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
                   }}
                   options={[
                     {
-                      value: "biryani",
-                      label: 'Biryani',
+                      value: 'biryani',
+                      label: 'Biryani'
                     },
                     {
-                      value: "chickem",
-                      label: 'Chicken',
+                      value: 'chicken',
+                      label: 'Chicken'
+                    },
+                    {
+                      value: 'vegetable',
+                      label: 'Vegetable'
+                    },
+                    {
+                      value: 'chinese',
+                      label: 'Chinese'
+                    },
+                    {
+                      value: 'paneer',
+                      label: 'Paneer'
                     }
                   ]}
                 />
@@ -65,7 +79,8 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
                 label={'Set price'}
                 name="price"
                 labelCol={{ span: 24 }}
-                rules={[{ required: true, message: 'Please input price' }]}>
+                rules={[{ required: true, message: 'Please input price' }]}
+              >
                 <Input type="number" placeholder="Food price" />
               </Form.Item>
               <Form.Item
@@ -73,7 +88,8 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
                 name="rating"
                 labelCol={{ span: 24 }}
                 required
-                rules={[{ required: true, message: 'Please add rating' }]}>
+                rules={[{ required: true, message: 'Please add rating' }]}
+              >
                 <Select
                   className="rating"
                   placeholder="Add Rating"
@@ -94,7 +110,8 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
             label="Image"
             name="image"
             valuePropName="fileList"
-            getValueFromEvent={normFile}>
+            getValueFromEvent={normFile}
+          >
             <Upload beforeUpload={() => false} listType="picture">
               <Button icon={<UploadOutlined />}>Click To Upload</Button>
             </Upload>
@@ -104,7 +121,8 @@ const FoodForm = ({ onFinish, fields = [], loading = false, resetOnSubmit = true
             name="description"
             labelCol={{ span: 24 }}
             required
-            rules={[{ required: true, message: 'Please input description', type: 'string' }]}>
+            rules={[{ required: true, message: 'Please input description', type: 'string' }]}
+          >
             <TextArea type="text" placeholder="Food description" />
           </Form.Item>
           <Form.Item>

@@ -1,12 +1,11 @@
 .navbar {
   background-color: #753ffd;
-  padding-left: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
   position: fixed;
   width: 100%;
   z-index: 9999;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -29,8 +28,26 @@
   font-size: 26px;
 }
 
+.user {
+  font-size: 16px;
+  color: white;
+}
+
+.button-logout {
+  background-color: #eae7f3;
+  margin: 0 3rem;
+}
+.button-logout :hover {
+  opacity: 0.9;
+}
+
 @media (min-width: 992px) {
   .menu {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .user {
     display: none;
   }
 }

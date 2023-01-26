@@ -11,7 +11,8 @@ const BackButton = () => {
       className="back-button"
       type="link"
       icon={<ArrowLeftOutlined />}
-      onClick={() => navigate(-1)}>
+      onClick={() => navigate(-1)}
+    >
       Go Back
     </Button>
   );

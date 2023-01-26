@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { Space,message,Typography } from 'antd';
+import { Space, message, Typography } from 'antd';
 import { useMutation } from 'react-query';
 
-import { API } from '../../constants';
+import { LOCAL_API_URL } from '../../constants';
 import RecipeForm from '../../components/recipeForm';
 import BackButton from '../../components/backButton';
 import { getToken } from '../../helpers';
@@ -11,7 +11,7 @@ const { Title } = Typography;
 const authToken = getToken();
 
 function addRecipe(data) {
-  return axios.post(`${API}/recipes`, data,{
+  return axios.post(`${LOCAL_API_URL}/recipes`, data, {
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${authToken}`
@@ -53,8 +53,8 @@ const AddRecipe = () => {
   }
 
   return (
-    <div style={{marginTop:"75px"}}>
-      <Space style={{width: '100%', justifyContent: 'space-between', alignItems: "center" }}>
+    <div style={{ marginTop: '75px' }}>
+      <Space style={{ width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
         <BackButton />
       </Space>
       {contextHolder}

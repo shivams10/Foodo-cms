@@ -23,3 +23,13 @@ const addFood = (data) => {
 export const useAddFoodData = () => {
   return useMutation(addFood);
 };
+
+function deleteFood(id) {
+  return axios.delete(`http://localhost:1337/api/foods/${id}`);
+}
+
+export const useDeleteFoodData = (onSuccess) => {
+  return useMutation(deleteFood, {
+    onSuccess
+  });
+};

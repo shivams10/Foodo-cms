@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { Layout } from 'antd';
 import 'antd/dist/reset.css';
 
@@ -13,26 +13,55 @@ import AddRecipe from './pages/addRecipe';
 import EditRecipe from './pages/editRecipe';
 import EditFood from './pages/editFood';
 import Login from './pages/login';
+import PageNotFound from './pages/pageNotFound';
 import ProtectedRoute from './components/protectedRoute';
+import { AUTH_TOKEN } from './constants';
 
 function App() {
+  const [IsloggedIn, setIsLoogedIn] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [selectedKey, setSelectedKey] = useState('0');
+
+  const token = localStorage.getItem(AUTH_TOKEN);
+
   const topics = [
     { title: 'Foodo Table', link: '/' },
     { title: 'Recipe Table', link: '/recipe' }
   ];
-  const [selectedKey, setSelectedKey] = useState('0');
+  const logIn = [{ title: 'Log In', link: 'sign-in' }];
+
   const changeSelectedKey = (event) => {
     const key = event.key;
     setSelectedKey(key);
   };
 
+  const LogIn = (IsloggedIn) => {
+    setIsLoogedIn(IsloggedIn);
+  };
+
   const Menu = (
-    <TopicMenu topics={topics} selectedKey={selectedKey} changeSelectedKey={changeSelectedKey} />
+    <TopicMenu
+      topics={IsloggedIn ? topics : logIn}
+      selectedKey={selectedKey}
+      changeSelectedKey={changeSelectedKey}
+    />
   );
+
+  useEffect(() => {
+    if (token && location.pathname === '/sign-in') {
+      setRedirect(true);
+      navigate('/');
+    }
+    if (!token) {
+      setRedirect(false);
+    }
+  }, [redirect, token]);
 
   return (
     <>
-      <NavBar menu={Menu} />
+      <NavBar menu={Menu} LogIn={LogIn} />
       <Layout>
         <SideBar menu={Menu} />
         <Routes>
@@ -42,7 +71,8 @@ function App() {
           <Route path="/add-recipe" element={<ProtectedRoute Component={AddRecipe} />} />
           <Route path="/recipe/edit/:id" element={<ProtectedRoute Component={EditRecipe} />} />
           <Route path="/foods/edit/:id" element={<ProtectedRoute Component={EditFood} />} />
-          <Route path="/sign-in" element={<Login />} />
+          <Route path="*" element={<ProtectedRoute Component={PageNotFound} />} />
+          {!redirect && <Route path="/sign-in" element={<Login />} />}
         </Routes>
       </Layout>
     </>

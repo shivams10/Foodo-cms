@@ -19,6 +19,7 @@
 4. **Other Tools** : Prettier, Eslint, GIt / Github.
 
 ## Start project using: npm run dev
+
 ![Screenshot 2023-01-20 at 11 13 29 AM](https://user-images.githubusercontent.com/114575564/214818205-b3efa030-2fda-4681-b8a0-5fe7961c6071.png)
 ![Screenshot 2023-01-20 at 11 15 05 AM](https://user-images.githubusercontent.com/114575564/214818230-ef657485-0914-48e3-b06c-5c92e07ec7c0.png)
 ![Screenshot 2023-01-20 at 11 15 17 AM](https://user-images.githubusercontent.com/114575564/214818236-f6441e5d-fd17-4b1b-8d27-54125e1fc64f.png)

@@ -1,10 +1,22 @@
-import { Table } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { Button, Space, Table, Popconfirm } from 'antd';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 import { useFoodsData } from '../../hooks/useFoodsData';
 import Header from '../../components/header';
+import { useDeleteFoodData } from '../../hooks/useFoodsData';
 
 export const HomePage = () => {
-  const { isLoading, data, isError, error } = useFoodsData();
+  const navigate = useNavigate();
+
+  const { isLoading, data, isError, error, isFetching, refetch } = useFoodsData();
+
+  const onSuccess = () => {
+    refetch();
+  };
+
+  const { mutate } = useDeleteFoodData(onSuccess);
+
   const Columns = [
     { title: 'Id', dataIndex: 'id', key: 'id', width: 50 },
     {
@@ -31,6 +43,34 @@ export const HomePage = () => {
       title: 'Rating',
       dataIndex: 'rating',
       width: 100
+    },
+    {
+      title: 'Action',
+      dataIndex: 'Action',
+      width: 120,
+      key: 'action',
+      render: (_, { id }) => {
+        return (
+          <Space>
+            <Button type="text" size="small" onClick={() => navigate(`/foods/edit/${id}`)}>
+              <EditOutlined />
+            </Button>
+            <Popconfirm
+              title="Are you sure?"
+              description="Delete entry?"
+              onConfirm={() => {
+                mutate(id);
+              }}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Button danger>
+                <DeleteOutlined />
+              </Button>
+            </Popconfirm>
+          </Space>
+        );
+      }
     }
   ];
 
@@ -56,6 +96,14 @@ export const HomePage = () => {
           category
         };
       });
+
+  if (isLoading || isFetching) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (isError) {
+    return <h2>{error.message}</h2>;
+  }
 
   return (
     <div style={{ marginTop: '70px' }}>
