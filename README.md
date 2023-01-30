@@ -13,7 +13,7 @@
 
 ## Technology used
 
-1. **React Js** : A javascript library created with Vite.
+1. **React Js** : A javascript library created with Vite and react-query.
 2. **Ant Design** : A UI library.
 3. **Strapi** : For creating backend of website, it is a headless CMS.
 4. **Other Tools** : Prettier, Eslint, GIt / Github.
